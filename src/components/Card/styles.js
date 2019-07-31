@@ -2,12 +2,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
     card: {
-        maxWidth: 600,
+        maxWidth: 614,
         minWidth: 483,
         maxHeight: 1100,
         boxShadow: 'none',
         border: '1px solid #E6E6E6',
         boxSizing: 'border-box',
+        marginBottom: 30,
         [theme.breakpoints.down('lg')]: {
             width: '100%'
         }
@@ -56,6 +57,10 @@ const useStyles = makeStyles(theme => ({
         width: 20,
         height: 20,
         marginRight: 5
+    },
+    anotherAvatarImg: {
+        width: 20,
+        height: 20,
     },
     fulano: {
         fontWeight: 500

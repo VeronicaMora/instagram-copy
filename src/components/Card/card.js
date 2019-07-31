@@ -13,15 +13,15 @@ import { /*FiSearch, FiUser, FiHeart, FiInstagram, FiBookmark,*/ FiMessageCircle
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { FaHeart, FaRegHeart, FaBookmark, FaRegBookmark } from "react-icons/fa";
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import { withRouter } from 'react-router-dom'
 
-const CardComponent = () => {
+const CardComponent = (props) => {
     const classes = useStyles();
 
-    // const imageHeight = document.getElementsByClassName('media')
-
-    // console.log(imageHeight.height)
-
+     const goToProfile = () => {
+        props.history.push('/profile')
+    }
+ 
     return (
         <Card className={classes.card}>
             <div className={classes.headerContainer}>
@@ -39,7 +39,7 @@ const CardComponent = () => {
                     // }
                     title="Shrimp and Chorizo Paella"
                     subheader="September 14, 2016"
-                    // titleTypographyrops={title}
+                    onClick={goToProfile}
                 />
                 <IconButton aria-label="Settings">
                     <MoreVertIcon />
@@ -71,7 +71,7 @@ const CardComponent = () => {
             <CardContent>
                 <div className={classes.likes}>
                     <Avatar aria-label="Recipe" className={classes.anotherAvatar}>
-                        <img className={classes.anotherAvatar} src={`https://www.gravatar.com/avatar/?d=identicon`} alt="avatar"></img>
+                        <img className={classes.anotherAvatarImg} src={`https://www.gravatar.com/avatar/?d=identicon`} alt="avatar"></img>
                     </Avatar>
                     <Typography variant="body2" component="p">
                         Les gusta a
@@ -85,4 +85,4 @@ const CardComponent = () => {
     );
 }
 
-export default CardComponent
+export default withRouter(CardComponent)

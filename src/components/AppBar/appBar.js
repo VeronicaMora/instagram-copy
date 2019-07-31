@@ -7,18 +7,26 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import useStyles from './styles'
 import { FiSearch, FiUser, FiHeart, FiInstagram /*FiBookmark, FiMessageCircle*/ } from "react-icons/fi";
+import { withRouter } from 'react-router-dom'
 
-const NavBar = () => {
+const NavBar = (props) => {
   const classes = useStyles();
   
+  const goToHome = () => {
+    props.history.push('/')
+  }
+
+  const goToProfile = () => {
+    props.history.push('/profile')
+  }
 
   return (
     <div className={classes.grow}>
       <AppBar className={classes.header} position="static">
         <Toolbar className={classes.toolbar}>
           <div className={classes.headerTitle}>
-            <FiInstagram className={classes.insticon}/>
-            <Typography className={classes.title} variant="h6" noWrap>
+            <FiInstagram className={classes.insticon} onClick={goToHome}/>
+            <Typography className={classes.title} onClick={goToHome} variant="h6" noWrap>
               Instagram
             </Typography>
           </div>
@@ -28,7 +36,6 @@ const NavBar = () => {
               <Typography className={classes.placeholder}>Buscar</Typography>
             </div>
             <InputBase
-              on
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -44,12 +51,7 @@ const NavBar = () => {
               </Badge>
             </IconButton>
             <IconButton
-              // edge="end"
-              // aria-label="Account of current user"
-              // // aria-controls={menuId}
-              // aria-haspopup="true"
-              // // onClick={handleProfileMenuOpen}
-              // color="inherit"
+              onClick={goToProfile}
             >
               <FiUser />
             </IconButton>
@@ -60,4 +62,4 @@ const NavBar = () => {
   );
 }
 
-export default NavBar;
+export default withRouter(NavBar);

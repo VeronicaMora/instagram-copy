@@ -3,14 +3,19 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
-        justifyContent: 'center'
+        // justifyContent: 'center',
+        overflow: 'hidden',
+        padding: '0 207px'
     },
     avatar: {
         width: 50,
         height: 50,
+        cursor: 'pointer'
     },
     wrapper: {
         marginLeft: 28,
+        position: 'fixed',
+        left: 803,
     },
     userWrapper: {
         display: 'flex',

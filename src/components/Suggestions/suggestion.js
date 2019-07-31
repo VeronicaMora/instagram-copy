@@ -14,45 +14,60 @@ const Suggestions = () => {
     return (
         <div className={classes.root}>
             <div className={classes.title}>
-                <ListSubheader component="div" id="nested-list-subheader">
+                <ListSubheader className={classes.subHeader} component="div" id="nested-list-subheader">
                     Sugerencias para ti
                 </ListSubheader>
                 <Typography className={classes.typography}>Ver todo</Typography>
             </div>
-            <div>
+            <div className={classes.listContainer}>
                 <List className={classes.list}>
                     <ListItem classes={{ root: classes.listitem }}>
-                        <ListItemAvatar>
+                        <ListItemAvatar className={classes.listItemAvatar}>
                             <Avatar className={classes.avatar}>
-                                <img className={classes.avatar} src={`https://www.gravatar.com/avatar/?d=identicon`} alt="avatar"></img>
+                                <img className={classes.avatarImg} src={`https://www.gravatar.com/avatar/?d=identicon`} alt="avatar"></img>
                             </Avatar>
                         </ListItemAvatar>
                         <ListItemText
+                            className={classes.listItemText}
+                            classes={{primary: classes.primary, secondary: classes.secondary}}
                             primary="fulanito"
                             secondary='hace un ratico'
                         />
+                        <h6 color="primary" className={classes.h6}>
+                            Seguir
+                        </h6>
                     </ListItem>
                     <ListItem classes={{ root: classes.listitem }}>
-                        <ListItemAvatar>
+                        <ListItemAvatar className={classes.listItemAvatar}>
                             <Avatar className={classes.avatar}>
-                                <img className={classes.avatar} src={`https://www.gravatar.com/avatar/?d=identicon`} alt="avatar"></img>
+                                <img className={classes.avatarImg} src={`https://www.gravatar.com/avatar/?d=identicon`} alt="avatar"></img>
                             </Avatar>
                         </ListItemAvatar>
                         <ListItemText
+                            className={classes.listItemText}
+                            classes={{primary: classes.primary, secondary: classes.secondary}}
                             primary="fulanito"
                             secondary='hace un ratico'
                         />
+                        <h6 color="primary" className={classes.h6}>
+                            Seguir
+                        </h6>
                     </ListItem>
                     <ListItem classes={{ root: classes.listitem }}>
-                        <ListItemAvatar>
+                        <ListItemAvatar className={classes.listItemAvatar}>
                             <Avatar className={classes.avatar}>
-                                <img className={classes.avatar} src={`https://www.gravatar.com/avatar/?d=identicon`} alt="avatar"></img>
+                                <img className={classes.avatarImg} src={`https://www.gravatar.com/avatar/?d=identicon`} alt="avatar"></img>
                             </Avatar>
                         </ListItemAvatar>
                         <ListItemText
+                            className={classes.listItemText}
+                            classes={{primary: classes.primary, secondary: classes.secondary}}
                             primary="fulanito"
                             secondary='hace un ratico'
                         />
+                        <h6 color="primary" className={classes.h6}>
+                            Seguir
+                        </h6>
                     </ListItem>
                 </List>
             </div>
